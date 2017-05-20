@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>360 view panorama trường Đại Học Công Nghệ Thông Tin</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hotspot_css/hintspot.css">
+<link rel="stylesheet" href="http://www.marzipano.net/demos/common/hint.css">
+<link rel="stylesheet" href="user.css">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="#" class="scene" data-id="0-cong-truoc">
+        <li class="text">Cổng trước</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="1-cong-sau">
+        <li class="text">Cổng sau</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="2-duong-canh-nha-e">
+        <li class="text">Đường cạnh nhà E</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="3-duong-ra-nha-xe">
+        <li class="text">Đường ra nhà xe</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="4-giang-duong">
+        <li class="text">Giảng đường</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="5-giao-nha-a-e-c">
+        <li class="text">Giao nhà A_E_C</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="6-hoi-truong">
+        <li class="text">Hội trường</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="7-khuon-vien-nha-a-e">
+        <li class="text">Khuôn viên nhà A,E</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="8-khuon-vien-truong">
+        <li class="text">Khuôn viên trường</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="9-phong-thuc-hanh">
+        <li class="text">Phòng thực hành</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="10-lau-1-nha-c">
+        <li class="text">Lầu 1 nhà C</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="11-le-tan">
+        <li class="text">Lễ tân</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="12-phong-hoc-chinh-quy">
+        <li class="text">Phòng học chính quy</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="13-phong-hoc-clc-nha-c">
+        <li class="text">Phòng học CLC nhà C</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="14-phong-hoc-nha-e">
+        <li class="text">Phòng học nhà E</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="15-san-bong">
+        <li class="text">Sân bóng</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="16-san-gan-nha-c">
+        <li class="text">Sân gần nhà C</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="17-sanh-giang-duong">
+        <li class="text">Sảnh giảng đường</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="18-sanh-nha-a">
+        <li class="text">Sảnh nhà A</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="19-sanh-nha-c">
+        <li class="text">Sảnh nhà C</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="20-lau-1-nha-a">
+        <li class="text">Lầu 1 nhà A</li>
+      </a>
+
+      <a href="#" class="scene" data-id="21-tang-thuong">
+        <li class="text">Tầng thượng</li>
+      </a>
+    
+      <a href="#" class="scene" data-id="22-thu-vien">
+        <li class="text">Thư viện</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="#" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="#" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="#" id="autoScreen" class="enabled">
+  <img class="icon off" src="img/stopAutoTurn.png">
+  <img class="icon on" src="img/autoButton.png">
+</a>
+
+<a href="#" id="autoMusic" class="enabled">
+  <img class="icon off" src="img/turnOffMusic.png">
+  <img class="icon on" src="img/turnOnMusic.png">
+</a>
+
+<a href="#" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="#" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="#" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="#" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="#" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="#" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="#" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<div class="player__control">
+  <button id="playPause"></button>
+</div>
+
+<audio id="player" src="http://uit360.xyz/music/audio.mp3" loop="loop" autoplay></audio>
+
+<script src="vendor/es5-shim.js"></script>
+<script src="vendor/eventShim.js"></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/requestAnimationFrame.js" ></script>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="switch.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
