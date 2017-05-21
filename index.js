@@ -509,13 +509,6 @@
     return null;
   }
 
-  
-  // change switch 
-  /*
-  var swithStop = document.getElementById('fullscreenToggle');
-
-  swithStop.addEventListener('click', changeSwitch);*/
-
   // This is swith scenes by 10 second for the preview
   var user = findUserDataById("hoc-sinh");
   var sceneIndex = 1;  
@@ -528,6 +521,7 @@
       if (sceneIndex == user.scenes.length) {
         clearInterval(autoSwithScene);
         switchScene(scenes[0]);
+        sceneIndex = 0;
       }
       
       var sceneX = findSceneById(user.scenes[sceneIndex].id);
