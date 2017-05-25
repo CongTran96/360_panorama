@@ -541,6 +541,8 @@
     clearInterval(auto);
   }
 
+  var player = document.querySelector('player');
+
   player.play();
 
   // You can turn on or off function play music
