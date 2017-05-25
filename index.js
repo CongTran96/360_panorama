@@ -468,6 +468,10 @@
       window.open('http://uit.edu.vn/');
     });
 
+    wrapper.querySelector('.image').addEventListener('click', function() {
+      window.open('http://uit.edu.vn/');
+    });
+
     return wrapper;
   }
 
@@ -519,20 +523,14 @@
 
     var autoSwithScene = setInterval(function() {
       if (sceneIndex == user.scenes.length) {
-        clearInterval(autoSwithScene);
         switchScene(scenes[0]);
         sceneIndex = 0;
+        AutoScreenClick();
       }
       
       var sceneX = findSceneById(user.scenes[sceneIndex].id);
       switchScene(findSceneById(user.scenes[sceneIndex].id),2000);
         sceneIndex ++;
-        /*setTimeout(function() {
-          sceneX.data.infoHotspots.forEach(function(hotspot) {
-          var element = createInfoHotspotElement(hotspot);
-          sceneX.marzipanoObject.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
-        });        
-      }, 2000);*/     
     }, 10000);
 
     return autoSwithScene;
@@ -543,38 +541,7 @@
     clearInterval(auto);
   }
 
-  function changeSwitch() {
-    checkSwitch ? stopAutoSwitchScene() : auto = autoSwitch();
-  }
-
-   /*panoElement.addEventListener('click', function() {
-    test();
-    });*/
-  
-  //this ís get yaw and pitch of the view
-  function test() {
-    var scene = viewer.scene();
-    var view = scene.view();    // get the scene's view
-
-    // Get the view values
-
-    var yaw = view.yaw();
-    var pitch = view.pitch();
-    var fov = view.fov();      // fov is horizontal
-    alert("yaw: " + yaw + "; pitch: " + pitch + "; fov: " + fov);
-  }
-  
-  /*
-  var player = document.getElementById('player');
-  
-  var playPause = document.getElementById('fullscreenToggle');*/
-
-  playPause.addEventListener('click', playPauseMusic, false);
-
-  function playPauseMusic() {
-    player.paused ? player.play() : player.pause();
-  }
-
+  // You can turn on or off function play music
   var autoMusic = document.querySelector('#autoMusic');
   var autoScreen = document.querySelector('#autoScreen');
   autoMusic.addEventListener('click', AutoMusicClick);
@@ -592,6 +559,8 @@
           player.play();
       }
   }
+  
+  // You can turn on or of function switch sence
   autoScreen.addEventListener('click', AutoScreenClick);
   function AutoScreenClick() {
       if (autoScreen.classList.contains('enabled')) {
