@@ -541,7 +541,7 @@
     clearInterval(auto);
   }
 
-  var player = document.querySelector('player');
+  var player = document.body.querySelector('player');
 
   player.play();
 
