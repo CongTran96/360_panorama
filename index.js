@@ -541,6 +541,8 @@
     clearInterval(auto);
   }
 
+  player.play();
+
   // You can turn on or off function play music
   var autoMusic = document.querySelector('#autoMusic');
   var autoScreen = document.querySelector('#autoScreen');
